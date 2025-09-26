@@ -1,25 +1,44 @@
 ---
 import logo from '../assets/logo.png';
+
+const {
+  title = "Faysuris - Esmaltes Fays, Nail Spa & Distribuidor Oficial Staleks y Arobell",
+  description = "Descubre Faysuris: tu Nail Spa en Curazao, creadores de los esmaltes Fays y distribuidores oficiales en el Caribe de Staleks y Arobell. Calidad para tus uñas.",
+  keywords = "Esmaltes Fays, Nail spa Curazao, uñas Curazao, manicura Curazao, pedicura Curazao, Staleks Caribe, Arobell Caribe, distribuidor Staleks, distribuidor Arobell, productos para uñas, belleza Caribe, Faysuris, fays uris, Nagelsalon Curaçao, nagelstudio Curaçao, manicure Curaçao, pedicure Curaçao, Staleks Caribbean, Arobell Caribbean, Fays nail polish, Klèts Fays, Salòn di uña Kòrsou, areglo di uña Kòrsou, manikür Kòrsou, pedikür Kòrsou, distribuidor Staleks Karibe, distribuidor Arobell Karibe, Nail salon Curacao, manicure Curacao, pedicure Curacao, Fays nail polish Caribbean, Staleks distributor Caribbean, Arobell distributor Caribbean",
+  author = "Faysuris",
+  ogImage = "/og-image.png", // Replace with a relevant image path
+  ogUrl = "https://faysuris.com", // Replace with your actual domain
+} = Astro.props;
 ---
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href={logo.src} />
-		<meta name="generator" content={Astro.generator} />
-		<title>faysuris.com</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href={logo.src} />
+    <meta name="generator" content={Astro.generator} />
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+    <!-- SEO Meta Tags -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content={author} />
+
+    <!-- Open Graph (OG) Tags for Social Media -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:url" content={ogUrl} />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={ogUrl} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+</head>
+<body>
+    <slot />
+</body>
+</html>
